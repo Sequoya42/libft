@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 16:31:30 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 18:14:59 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/08 19:43:34 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmap(char const *s, char (*f) (char))
 
 	l = ft_strlen(s);
 	str = ft_strnew(l);
-	if (!s || !*f)
+	if (!s || !f)
 		return ;
 	while (i < l)
 	{

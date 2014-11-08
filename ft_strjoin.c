@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:40:17 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 19:59:35 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/08 19:45:53 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/08 20:00:12 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 #include <stdio.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-
 	int i;
-	int j;
+	int l;
+	char *str;
 
 	i = 0;
-	j = 0;
-	char	*str;
+	l = ft_strlen(s1) + ft_strlen(s2);
+	str = ft_strnew(l);
+	if (!str || !s1 || !s2)
+		return (NULL);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
+}
 
-	str = s1;	
-	while (str[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
-	{
-		str[i + j] = s2[j];
-		j++;
-	}
-	str[i + j] = '\0';
-	return (s1);
+int		main(void)
+{
+	char const *s1;
+	char const *s2;
+	char	*t;
+
+	s1 = "bonjour";
+	s2 = " tout le monde";
+	t = ft_strjoin(s1, s2);
+	printf("%s\n", t);
+	return (0);
 }

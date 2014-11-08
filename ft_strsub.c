@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:40:17 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 19:59:35 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/08 18:15:58 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/08 19:42:02 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-
-	int i;
-	int j;
+	unsigned int i;
+	char *str;
 
 	i = 0;
-	j = 0;
-	char	*str;
-
-	str = s1;	
-	while (str[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
+	str = ft_strnew(len + 1);
+	if (!str || !s)
+		return (NULL);
+	while (i < len)
 	{
-		str[i + j] = s2[j];
-		j++;
+		str[i] = s[start];
+		i++;
 	}
-	str[i + j] = '\0';
-	return (s1);
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:16:30 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 18:16:58 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/08 19:56:50 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strmap(char const *s, char (*f) (char));
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif

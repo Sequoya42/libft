@@ -6,11 +6,11 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 12:48:18 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 13:02:37 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/08 19:52:26 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
