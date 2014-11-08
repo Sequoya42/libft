@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 19:23:39 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/07 20:08:33 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/07 18:51:05 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/07 19:46:14 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void	ft_memdel(void **ap)
 {
-	int i;
-	int diff;
-
-	i = 0;
-	while (s1[i] && s2[i])
+	if (ap != NULL)
 	{
-		diff = (s1[i] - s2[i]);
-		if (diff != 0)
-			return (diff);
-		i++;
+		free (*ap);
+		*ap = NULL;
 	}
-	return (0);
 }

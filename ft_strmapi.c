@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 19:23:39 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/07 20:08:33 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/08 17:15:51 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/08 18:14:57 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	int i;
-	int diff;
+	unsigned int i;
+	unsigned int l;
+	char		*str;
 
 	i = 0;
-	while (s1[i] && s2[i])
+	l = ft_strlen(s);
+	str = ft_strnew(l);
+	if (!s || !*f)
+		return ;
+	while (i < l)
 	{
-		diff = (s1[i] - s2[i]);
-		if (diff != 0)
-			return (diff);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (0);
+	return (str);
 }

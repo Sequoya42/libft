@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:16:30 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/07 18:42:52 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/08 18:16:58 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <unistd.h>
 
 size_t	ft_strlen(const char *s);
+void	ft_memdel(void **ap);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f) (unsigned int, char *));
+void	ft_strdel(char **as);
 void	ft_bzero(void *s, size_t n);
 void	ft_strlclr(char *s);
 void	ft_putchar(char c);
@@ -56,5 +60,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
-
+char	*ft_strnew(size_t size);
+char	*ft_strmap(char const *s, char (*f) (char));
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 #endif

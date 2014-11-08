@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 19:23:39 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/07 20:08:33 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/08 15:41:41 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/08 16:16:32 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-	int diff;
+	size_t i;
+	size_t l;
 
 	i = 0;
-	while (s1[i] && s2[i])
+	l = ft_strlen(s);
+	while (i < l)
 	{
-		diff = (s1[i] - s2[i]);
-		if (diff != 0)
-			return (diff);
+		(*f)(s);
 		i++;
 	}
-	return (0);
 }
