@@ -6,11 +6,11 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:45:02 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/03 16:50:54 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 16:10:11 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include "libft.h"
 
 int		ft_isprint(int c)
 {

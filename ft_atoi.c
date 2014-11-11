@@ -6,32 +6,34 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:52:39 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/03 19:30:30 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 17:54:52 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
 	int res;
+	char *t;
 
+	t = (char *)str;
 	i = 0;
 	res = 0;
-	if (str[0] == '-')
+	if (t[0] == '-')
 		i++;
-	while (str[i])
+	while (t[i])
 	{
-		if (str[i] < '0' || str[i] > '9')
-			str[i] = '\0';
+		if (t[i] < '0' || t[i] > '9')
+			t[i] = '\0';
 		else
 		{
-			res = res * 10 + (str[i] - 48);
+			res = res * 10 + (t[i] - 48);
 			i++;
 		}
 	}
-	if (str[0] == '-')
+	if (t[0] == '-')
 		res = -res;
 	return (res);
 }

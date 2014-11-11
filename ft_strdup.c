@@ -6,13 +6,11 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 13:36:52 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/05 15:24:46 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 16:08:52 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
@@ -34,13 +32,4 @@ char	*ft_strdup(const char *s1)
 	}
 	s2[j] = '\0';
 	return (s2);
-}
-
-int		main(int ac, char **av)
-{
-	if (ac != 2)
-		return (0);
-	printf("%s\n", strdup(av[1]));
-	printf("%s\n", ft_strdup(av[1]));
-	return (0);
 }

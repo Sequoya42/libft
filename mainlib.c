@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/11 18:25:07 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 18:14:55 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 #include <ctype.h>
 #include <time.h>
 
-#include "libft.h" /* compile with -I./ */
+#include <libft.h> /* compile with -I./ */
 
 #define D_ERROR	{ printf("Error Line %d, Funct %s ", __LINE__ - 1, __func__); return (0); }
 #define D_ADD_HCTEST(name)	uf_add_test(test, "\033[33m"#name"\033[0m", uf_test_##name);
@@ -219,7 +219,7 @@ int					main(int argc, const char **argv)
 #define	D_ITOA
 	D_ADD_TEST(itoa);
 #define	D_STRTRIM
-	D_ADD_TEST(strtrim);*/
+	D_ADD_TEST(strtrim);
 /*#define	D_LSTNEW
 	D_ADD_TEST(lstnew);
 #define	D_LSTDELONE
@@ -231,11 +231,12 @@ int					main(int argc, const char **argv)
 #define	D_LSTITER
 	D_ADD_TEST(lstiter);
 #define D_LSTMAP
-D_ADD_TEST(lstmap);*/
+	D_ADD_TEST(lstmap);
+*/
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);
-lin		if (test[i].funct() == 0)
+		if (test[i].funct() == 0)
 			printf("\033[31mFAIL\033[0m\n");
 		else
 			printf("\033[32mOK\033[0m\n");
@@ -262,7 +263,7 @@ t_list		*uf_testmap(t_list *elem)
 {
 	t_list	*new;
 	char	*content;
-	int		i;
+	unsigned int		i;
 
 	content = ft_strdup((char *)(elem->content));
 	i = 0;
@@ -472,7 +473,7 @@ s pointers but have ret = \"%s\" and our: %p / your: %p\033[0m\n", __LINE__ - 2,
     }
     free(r);
 	return (1);
-}
+	}
 #endif
 
 #ifdef	D_STRSPLIT
@@ -480,12 +481,13 @@ int					uf_test_strsplit(void)
 {
 	char			**ret;
 
+
 	ft_strsplit(NULL, 0);
 	ft_strsplit(NULL, 'a');
 	ret = ft_strsplit("", '*');
 	if (ret == NULL || ret[0] != NULL)
 	{
-		printf("Error Line %d, Funct %s : \
+		printf("Error Line %d, Funct %s :								\
 			   \nYour function has return NULL or the first pointer in your tab is NULL\n", __LINE__ - 2, __func__);
 		uf_free_tab((void **)ret);
 		return (0);
@@ -695,7 +697,7 @@ char			uf_strmapi_callback(unsigned int i, char s)
 int				uf_test_itoa(void)
 {
 	char		*ret;
-	if (strcmp(ret, ft_itoa(0), "0") != 0)
+	if (strcmp(ret = ft_itoa(0), "0") != 0)
 	{
 		printf("Error Line %d, Funct %s : \n\033[31mft_itoa(0).\nExpected ret = \"0\" \
 			   but have ret = \"%s\"\033[0m\n", __LINE__ - 2, __func__, ret);
@@ -1151,56 +1153,47 @@ int				uf_test_strncmp(void)
 #ifdef  __clang__
 	if (strncmp("abc", "abc", 2) != a)
 		D_ERROR;
-#else
+#endif
+#ifndef  __clang__
 	if (a)
 		D_ERROR;
 #endif
-
 	a =  ft_strncmp("cba", "abc", 2);
 #ifdef  __clang__
 	if (strncmp("cba", "abc", 2) != a)
 		D_ERROR;
-#else
+#endif
+#ifndef  __clang__
 	if (!a)
 		D_ERROR;
 #endif
-
 	a =  ft_strncmp("abc", "cba", 2);
 #ifdef  __clang__
 	if (strncmp("abc", "cba", 2) != a)
 		D_ERROR;
-#else
+#endif
+#ifndef  __clang__
 	if (!a)
 		D_ERROR;
 #endif
-
 	a = ft_strncmp("", "", 3);
 #ifdef  __clang__
 	if (strncmp("", "", 3) != a)
 		D_ERROR;
-#else
+#endif
+#ifndef  __clang__
 	if (a)
 		D_ERROR;
 #endif
-
 	a = ft_strncmp("q", "a", 0);
 #ifdef  __clang__
 	if (strncmp("q", "a", 0) != a)
 		D_ERROR;
-#else
+#endif
+#ifndef  __clang__
 	if (a)
 		D_ERROR;
 #endif
-
-	a = ft_strncmp("abc", "abd", 2);
-#ifdef  __clang__
-	if(strncmp("abc", "abd", 2) != a)
-		D_ERROR;
-#else
-	if (a)
-		D_ERROR;
-#endif
-
 	return (1);
 }
 #endif
@@ -1601,8 +1594,8 @@ int				uf_test_memchr(void)
 	int				i;
 
 	i = -300;
-	memchr(NULL, 0, 0);
-	ft_memchr(NULL, 0, 0);
+//	memchr(NULL, 0, 0);
+//	ft_memchr(NULL, 0, 0);
 	while (i < 300)
 	{
 		j = 0;
@@ -1621,6 +1614,7 @@ int				uf_test_memchr(void)
 			D_ERROR
 		++i;
 	}
+
 	return (1);
 }
 #endif

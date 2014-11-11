@@ -6,13 +6,13 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 19:26:16 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/04 18:03:55 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 18:01:24 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 	int				diff;

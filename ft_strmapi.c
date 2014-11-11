@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 17:15:51 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 19:43:44 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 17:29:27 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	unsigned int i;
-	unsigned int l;
-	char		*str;
+	unsigned int	i;
+	unsigned int	l;
+	char			*str;
 
 	i = 0;
 	l = ft_strlen(s);
 	str = ft_strnew(l);
 	if (!s || !f)
-		return ;
+		return (NULL);
 	while (i < l)
 	{
 		str[i] = (*f)(i, s[i]);

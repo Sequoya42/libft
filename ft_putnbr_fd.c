@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 13:08:12 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/07 13:10:18 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 17:17:04 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		n = -n;
 		ft_putchar_fd('-', fd);
-		if (nb > 10)
+		if (n > 10)
 			ft_putnbr(n / 10);
 		ft_putnbr(n % 10);
 	}

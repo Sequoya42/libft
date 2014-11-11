@@ -6,12 +6,11 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:01:31 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/05 19:11:22 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 17:02:05 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -27,19 +26,4 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	}
 	return (NULL);
-}
-
-int		main(void)
-{
-	char *s1;
-	char *s2;
-	char *s3;
-
-	s1 = "r";
-	s3 = strrchr(s1, 'r');
-	s2 = ft_strrchr(s1, 'r');
-	printf("%s\n", s2);
-	printf("le vrai\n");
-	printf("%s\n", s3);
-	return (0);
 }

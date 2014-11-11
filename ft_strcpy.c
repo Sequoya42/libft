@@ -6,11 +6,13 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:05:11 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/05 13:01:13 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 17:18:05 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include "libft.h"
+
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int i;
 

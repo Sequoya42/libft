@@ -6,13 +6,13 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:08:11 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/03 18:10:35 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/11 18:20:47 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include "libft.h"
 
-int		ft_isdgit(int c)
+int		ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
