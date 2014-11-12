@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 18:21:10 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 17:22:53 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/12 14:49:39 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	str = s1;
 	while (str[i] != '\0')
 		i++;
-	while (s2[j] != '\0' && j < n)
+	while (j < n)
 	{
 		str[i + j] = s2[j];
 		j++;

@@ -6,7 +6,7 @@
 #    By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/11 17:48:47 by rbaum             #+#    #+#              #
-#    Updated: 2014/11/11 18:02:32 by rbaum            ###   ########.fr        #
+#    Updated: 2014/11/12 11:12:44 by rbaum            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -85,4 +85,4 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean make
+re: fclean all

@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 12:07:25 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 17:59:30 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/12 17:29:09 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t ori;
+	size_t	lendst;
+	size_t	lensrc;
 
-	if (size == 0)
-		return (0);
-	ori = size;
-	while (*dst && size > 0)
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
+	if (size <= lendst)
+		return (lensrc + size);
+	if (lensrc < size - lendst)
 	{
-		dst++;
-		size--;
+		ft_memcpy(dst + lendst, src, lensrc);
+		dst += lendst + lensrc;
 	}
-	if (size == 0)
-		return (ori - 1);
-	while (*src && size > 0)
+	else if (lensrc >= size - lendst)
 	{
-		*dst = *src;
-		src++;
-		dst++;
-		size--;
+		ft_memcpy(dst + lendst, src, size -lendst -1);
+		dst = dst + size - 1;
 	}
 	*dst = '\0';
-	return (ori - size);
+	return (lendst + lensrc);
 }
