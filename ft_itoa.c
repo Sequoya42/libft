@@ -6,7 +6,11 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 19:41:41 by rbaum             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2014/11/12 17:58:09 by rbaum            ###   ########.fr       */
+=======
+/*   Updated: 2014/11/10 21:07:12 by rbaum            ###   ########.fr       */
+>>>>>>> 6f5c146c8c322dd402e66e463b54f166e5d5a8d7
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +18,19 @@
 
 char	*ft_itoa(int n)
 {
+<<<<<<< HEAD
 	int		i;
 	int		j;
 	int		len;
 	char	*str;
 	int		div;
+=======
+	int		len;
+	int		i;
+	int		div;
+	char	*str;
+	int		j;
+>>>>>>> 6f5c146c8c322dd402e66e463b54f166e5d5a8d7
 
 	i = 0;
 	j = 0;
