@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 15:41:41 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 16:16:32 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/13 17:36:35 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_striter(char *s, void (*f)(char *))
 	size_t l;
 
 	i = 0;
-	l = ft_strlen(s);
-	while (i < l)
+	if (s != NULL && f != NULL)
 	{
-		(*f)(s);
-		i++;
+		l = ft_strlen(s);
+		while (i < l)
+			f(&s[i++]);
 	}
 }

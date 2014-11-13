@@ -6,34 +6,46 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:52:39 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 17:54:52 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/13 16:38:06 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static int		ft_caract(const char *str)
 {
-	int i;
-	int res;
-	char *t;
+	int		i;
 
-	t = (char *)str;
 	i = 0;
-	res = 0;
-	if (t[0] == '-')
-		i++;
-	while (t[i])
+	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\r' ||
+	str[i] == '\v' || str[i] == '\f' || str[i] == ' ')
 	{
-		if (t[i] < '0' || t[i] > '9')
-			t[i] = '\0';
-		else
-		{
-			res = res * 10 + (t[i] - 48);
-			i++;
-		}
+		i++;
 	}
-	if (t[0] == '-')
-		res = -res;
-	return (res);
+	if (str[i] == '+' && ft_isdigit(str[i + 1]) != 0)
+		i++;
+	return (i);
+}
+
+int				ft_atoi(const char *str)
+{
+	int		i;
+	int		res;
+	int		neg;
+
+	i = ft_caract(str);
+	neg = 0;
+	res = 0;
+	if (str[i] == '-' && ft_isdigit(str[i + 1]) != 0)
+	{
+		neg++;
+		i++;
+	}
+	while (ft_isdigit(str[i]) != 0)
+	{
+		res = res * 10;
+		res = res + (str[i] - 48);
+		i++;
+	}
+	return (neg == 1 ? -res : res);
 }

@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:10:09 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 16:59:40 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/13 17:20:30 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@ int		ft_strequ(char const *s1, char const *s2)
 	int diff;
 
 	i = 0;
-	while (s2[i] || s1[i])
+	if (s1 != NULL  && s2 != NULL)
 	{
-		diff = (s1[i] - s2[i]);
-		if (diff != 0)
-			return (0);
-		i++;
+		while (s2[i] || s1[i])
+		{
+			diff = (s1[i] - s2[i]);
+			if (diff != 0)
+				return (0);
+			i++;
+		}
+		return (1);
 	}
-	return (1);
+	return (0);
 }

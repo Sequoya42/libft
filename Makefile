@@ -6,7 +6,7 @@
 #    By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/11 17:48:47 by rbaum             #+#    #+#              #
-#    Updated: 2014/11/12 11:12:44 by rbaum            ###   ########.fr        #
+#    Updated: 2014/11/13 16:29:29 by rbaum            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -71,18 +71,21 @@ SRC = ft_atoi.c\
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+all: 		$(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $@ $^
+$(NAME): 	$(OBJ)
+			@ar rc $@ $^
+			@echo "compile done !"
 
-%.o: %.c
-	$(CC) $(CFLAG) -c $< -o $@
+%.o:		%.c
+			@$(CC) $(CFLAG) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+			@rm -f $(OBJ)
+			@echo "clean done !"
 
-fclean: clean
-	rm -f $(NAME)
+fclean:		clean
+			@rm -f $(NAME)
+			@echo "fclean done !"
 
-re: fclean all
+re: 		fclean all

@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/12 19:36:03 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/13 11:41:37 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1705,7 +1705,7 @@ int				uf_test_memccpy(void)
 			temp = memccpy(itab2, itab, 'a', (k < sizeof(itab)) ? k : sizeof(itab));
 			memcpy(itab3, itab2, sizeof(itab));
 			temp2 = ft_memccpy(itab2, itab, 'a', (k < sizeof(itab)) ? k : sizeof(itab));
-			if ((mexmcmp(itab2, itab3, sizeof(itab)) != 0 || (temp != temp2)))
+			if ((memcmp(itab2, itab3, sizeof(itab)) != 0 || (temp != temp2)))
 				D_ERROR
 			temp = memccpy(ltab2, ltab, 'a', (k < sizeof(ltab)) ? k : sizeof(ltab));
 			memcpy(ltab3, ltab2, sizeof(ltab));

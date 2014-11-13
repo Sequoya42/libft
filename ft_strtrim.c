@@ -6,33 +6,44 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 15:14:11 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 18:20:05 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/13 20:26:10 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int		ft_none(char c)
 {
-	char	*str;
-	int		i;
-	int		l;
-	int		j;
+	if (c == '\n' || c == '\t' || c == ' ')
+		return (c);
+	return (0);
+}
 
-	i = 0;
-	j = 0;
-	l = ft_strlen(s);
-	str = ft_strnew(l);
-	while (s[i])
+char			*ft_strtrim(const char *s)
+{
+	char		*str;
+	int			i;
+	size_t		l;
+
+	l = 0;
+	if (s != NULL)
 	{
-		if (s[i] != '\n' && s[i] != '\t' && s[i] != ' ' && s[i] != ',')
+		while (ft_none(*s) != 0)
+			s++;
+		while (s[l] != '\0')
 		{
-			str[j] = s[i];
-			j++;
+			i = 0;
+			while (ft_none(s[i + l]) != 0)
+				i++;
+			if (i > 0 && s[i + l] == '\0')
+				break ;
+			else if (i > 0)
+				l = l + i;
+			l++;
 		}
-		i++;
+		str = ft_strnew(l);
+		ft_memcpy(str, s, l);
+		return (str);
 	}
-	if (str[0] == '\0')
-		return (NULL);
-	return (str);
+	return (NULL);
 }
