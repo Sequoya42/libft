@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 11:10:09 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/14 20:59:19 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/15 18:25:41 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/15 18:33:28 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	int i;
-	int diff;
-
-	i = 0;
-	if (s1 != NULL && s2 != NULL)
+	if (new)
 	{
-		while (s2[i] || s1[i])
+		if (!(*alst))
 		{
-			diff = (s1[i] - s2[i]);
-			if (diff != 0)
-				return (0);
-			i++;
+			*alst = new;
 		}
-		return (1);
+		new->next = *alst;
+		*alst = new;
 	}
-	return (0);
 }

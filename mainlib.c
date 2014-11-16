@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/13 11:41:37 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/15 18:39:32 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,7 +220,7 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(itoa);
 #define	D_STRTRIM
 	D_ADD_TEST(strtrim);
-/*#define	D_LSTNEW
+#define	D_LSTNEW
 	D_ADD_TEST(lstnew);
 #define	D_LSTDELONE
 	D_ADD_TEST(lstdelone);
@@ -232,7 +232,7 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(lstiter);
 #define D_LSTMAP
 	D_ADD_TEST(lstmap);
-*/
+
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);

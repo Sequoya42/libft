@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 11:10:09 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/14 20:59:19 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/15 18:39:43 by rbaum             #+#    #+#             */
+/*   Updated: 2014/11/15 18:43:28 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem))
 {
-	int i;
-	int diff;
-
-	i = 0;
-	if (s1 != NULL && s2 != NULL)
+	t_list*result;
+	t_list*tmp;
+	t_list*tmp2;
+	
+	if (!lst || !f)
+		return (NULL);
+	tmp2 = f(lst);
+	if ((result = ft_lstnew(tmp2->content, tmp2->content_size)))
 	{
-		while (s2[i] || s1[i])
+		tmp = result;
+		lst = lst->next;
+		while (lst)
 		{
-			diff = (s1[i] - s2[i]);
-			if (diff != 0)
-				return (0);
-			i++;
+			tmp2 = f(lst);
+			if (!(tmp->next = ft_lstnew(tmp2->content, tmp2->content_size)))
+				return (NULL);
+			tmp = tmp->next;
+			lst = lst->next;
 		}
-		return (1);
 	}
-	return (0);
+	return (result);
 }

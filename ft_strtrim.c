@@ -6,30 +6,12 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 15:14:11 by rbaum             #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2014/11/14 19:38:55 by rbaum            ###   ########.fr       */
-=======
-/*   Updated: 2014/11/13 20:26:10 by rbaum            ###   ########.fr       */
->>>>>>> 123feae9ab5e3cbc5578c6a4122b5805b54b588f
+/*   Updated: 2014/11/14 20:59:37 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-<<<<<<< HEAD
-static int	ft_none(char c)
-{
-	if (c == '\n' || c == '\t' || c == ' ')
-		return (c);
-	return (0);
-}
-
-char		*ft_strtrim(const char *s)
-{
-	char	*str;
-	int		i;
-	size_t	l;
-=======
 static int		ft_none(char c)
 {
 	if (c == '\n' || c == '\t' || c == ' ')
@@ -42,7 +24,6 @@ char			*ft_strtrim(const char *s)
 	char		*str;
 	int			i;
 	size_t		l;
->>>>>>> 123feae9ab5e3cbc5578c6a4122b5805b54b588f
 
 	l = 0;
 	if (s != NULL)
