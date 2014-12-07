@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2014/11/15 18:39:32 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/30 15:28:44 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,14 @@ int	uf_test_memccpy(void);
 int	uf_test_memcpy(void);
 int	uf_test_memset(void);
 int	uf_test_bzero(void);
+/*
 int	uf_test_lstnew(void);
 int	uf_test_lstdelone(void);
 int	uf_test_lstdel(void);
 int	uf_test_lstadd(void);
 int	uf_test_lstiter(void);
 int uf_test_lstmap(void);
-
+*/
 typedef struct	s_test
 {
 	const char	*name;
@@ -220,6 +221,7 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(itoa);
 #define	D_STRTRIM
 	D_ADD_TEST(strtrim);
+/*
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
 #define	D_LSTDELONE
@@ -232,7 +234,7 @@ int					main(int argc, const char **argv)
 	D_ADD_TEST(lstiter);
 #define D_LSTMAP
 	D_ADD_TEST(lstmap);
-
+*/
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);

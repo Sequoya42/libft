@@ -6,7 +6,7 @@
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 15:28:38 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/14 20:45:25 by rbaum            ###   ########.fr       */
+/*   Updated: 2014/11/16 18:01:03 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ char		**ft_sublen(char const *s, char c, char **tab, int nbl)
 			nbl--;
 			start = i;
 			len = 0;
-			while (s[i] != c && s[i++] != '\0')
+			while (s[i] != c && s[i] != '\0')
+			{
 				len++;
+				i++;
+			}
 			tab[j++] = ft_strsub(s, start, len);
-			i--;
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 #    By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/11 17:48:47 by rbaum             #+#    #+#              #
-#    Updated: 2014/11/15 18:42:42 by rbaum            ###   ########.fr        #
+#    Updated: 2014/11/14 20:39:26 by rbaum            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -68,13 +68,7 @@ SRC = ft_atoi.c\
     ft_strtrim.c\
 	ft_strctrim.c\
     ft_tolower.c\
-    ft_toupper.c\
-	ft_lstnew.c\
-	ft_lstdelone.c\
-	ft_lstdel.c\
-	ft_lstadd.c\
-	ft_lstiter.c\
-	ft_lstmap.c
+    ft_toupper.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -82,7 +76,6 @@ all: 		$(NAME)
 
 $(NAME): 	$(OBJ)
 			@ar rc $@ $^
-			@ranlib $@
 			@echo "compile done !"
 
 %.o:		%.c
