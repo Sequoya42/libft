@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 18:51:05 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 16:04:34 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/08 19:45:53 by rbaum             #+#    #+#             */
+/*   Updated: 2015/10/11 16:31:12 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (ap != NULL)
+	int		l;
+	char	*str;
+
+	if (s1 != NULL && s2 != NULL)
 	{
-		free (*ap);
-		*ap = NULL;
+		l = ft_strlen(s1) + ft_strlen(s2);
+		str = ft_strnew(l);
+		if (!str || !s1 || !s2)
+			return (NULL);
+		ft_strcpy(str, s1);
+		ft_strcat(str, s2);
+		return (str);
 	}
+	return (0);
 }

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/08 18:15:58 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/13 17:22:18 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/03 19:23:39 by rbaum             #+#    #+#             */
+/*   Updated: 2015/09/30 20:03:16 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned int	i;
-	char			*str;
+	int i;
+	int diff;
 
 	i = 0;
-	if (s != NULL)
+	if (!s1 && !s2)
+		return (0);
+	if (s1 == NULL)
+		return (-1);
+	if (s2 == NULL)
+		return (1);
+	while (s1[i] && s2[i])
 	{
-		if ((str = ft_strnew(len + 1)) == NULL)
-			return (NULL);
-		while (i < len)
-		{
-			str[i] = s[start];
-			i++;
-			start++;
-		}
-		return (str);
+		diff = ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if (diff != 0)
+			return (diff);
+		i++;
 	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

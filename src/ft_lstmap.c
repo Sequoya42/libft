@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 13:36:52 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 16:08:52 by rbaum            ###   ########.fr       */
+/*   Created: 2015/01/02 18:49:59 by rbaum             #+#    #+#             */
+/*   Updated: 2015/09/23 13:45:06 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list		*ft_lstmap(t_list *list, t_list *(*f)(t_list*))
 {
-	int			i;
-	int			j;
-	char		*s2;
+	t_list	*maped;
+	t_list	*add;
+	t_list	*tmp;
 
-	i = 0;
-	if (!s1)
+	if (list == NULL)
 		return (NULL);
-	while (s1[i])
-		i++;
-	s2 = (char *)malloc(sizeof(char) * (i + 1));
-	j = 0;
-	while (s1[j])
+	maped = f(list);
+	tmp = maped;
+	list = list->next;
+	while (list != NULL)
 	{
-		s2[j] = s1[j];
-		j++;
+		add = f(list);
+		tmp->next = add;
+		tmp = add;
+		list = list->next;
 	}
-	s2[j] = '\0';
-	return (s2);
+	return (maped);
 }

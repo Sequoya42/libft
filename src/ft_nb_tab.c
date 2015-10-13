@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_nb_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:40:17 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/11 17:35:54 by rbaum            ###   ########.fr       */
+/*   Created: 2015/02/15 19:56:26 by rbaum             #+#    #+#             */
+/*   Updated: 2015/03/16 18:40:23 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int			ft_nb_tab(char **tab)
 {
 	int		i;
-	int		j;
-	char	*str;
 
 	i = 0;
-	j = 0;
-	str = s1;
-	while (str[i] != '\0')
+	while (tab[i])
 		i++;
-	while (s2[j] != '\0')
+	return (i);
+}
+
+void		ft_init_tab(char **tab)
+{
+	int		i;
+
+	i = 0;
+	while (tab[i])
 	{
-		str[i + j] = s2[j];
-		j++;
+		tab[i] = NULL;
+		++i;
 	}
-	str[i + j] = '\0';
-	return (s1);
+	tab[i] = NULL;
 }

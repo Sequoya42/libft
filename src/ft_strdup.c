@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbaum <rbaum@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 18:42:24 by rbaum             #+#    #+#             */
-/*   Updated: 2014/11/08 17:03:28 by rbaum            ###   ########.fr       */
+/*   Created: 2014/11/05 13:36:52 by rbaum             #+#    #+#             */
+/*   Updated: 2015/03/21 17:51:10 by rbaum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char	*ft_strdup(const char *s1)
 {
-	size_t	i;
-	void	*mem;
-	char	*t;
+	int			i;
+	int			j;
+	char		*s2;
 
 	i = 0;
-	mem = (void *)malloc(size * sizeof(void));
-	t = (char *)mem;
-	if (mem != NULL)
+	if (!s1)
+		return (NULL);
+	while (s1[i])
+		i++;
+	if ((s2 = (char *)malloc(sizeof(char) * (i + 1))) == NULL)
+		return (NULL);
+	j = 0;
+	while (s1[j])
 	{
-		while (i < size)
-		{
-			*t++ = 0;
-			i++;
-		}
+		s2[j] = s1[j];
+		j++;
 	}
-	return (mem);
+	s2[j] = '\0';
+	return (s2);
 }
